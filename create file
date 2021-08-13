@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+int main ()
+{
+  std::string filename;
+  std::cin >> filename;
+
+  std::ofstream file (filename.c_str(), std::ios::app);
+
+  if(file.is_open())
+  {
+    std::cout << "success\n";
+  }
+
+  std::vector<std::string> names;
+  names.push_back ("caleb");
+  names.push_back("amy");
+  names.push_back("susan");
+
+  for (std::string name : names)
+  {
+    file << name << std::endl;
+  }
+  
+
+  file << "hey";
+
+  file.close();
+  return 0;
+}
